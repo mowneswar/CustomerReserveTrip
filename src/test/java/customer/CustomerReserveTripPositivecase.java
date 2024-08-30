@@ -52,12 +52,12 @@ public class CustomerReserveTripPositivecase {
 	public void testSearchCountry() throws InterruptedException {
 		WebElement searchBtn = driver.findElement(By.className("android.widget.EditText"));
 		searchBtn.sendKeys("india");
-		WebElement indiaBtn = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView\r\n" ));
+		WebElement indiaBtn = driver.findElement(By.xpath("//android.widget.TextView[@class='android.widget.TextView' and @text='India']"));	
 		indiaBtn.click();
 		WebElement numWidget= driver.findElement(By.className("android.widget.EditText"));
 		numWidget.sendKeys("9443527443");
 		Thread.sleep(3000);
-		WebElement cnBtn1 = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup/android.widget.Button"));
+		WebElement cnBtn1 = driver.findElement(By.xpath("//android.widget.TextView[@text='CONTINUE' and @enabled='true' and @displayed='true']"));
 		cnBtn1.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
@@ -138,7 +138,7 @@ public class CustomerReserveTripPositivecase {
 	@Test(dependsOnMethods= {"testOnScheduleRideTime"})
 	public void testSearchandLoc()throws InterruptedException {
 
-		WebElement destiBox = driver.findElement(By.xpath("//android.widget.TextView[@bounds=\"[223,2069][966,2133]\"]"));
+		WebElement destiBox = driver.findElement(By.xpath("//android.widget.TextView[@bounds='[242,2069][956,2133]']"));
 		destiBox.click();
 		Thread.sleep(3000);
 		WebElement searchdrplLoc1 = driver.findElement(By.xpath("//android.widget.EditText[@bounds=\"[183,338][856,457]\"]"));
@@ -156,7 +156,7 @@ public class CustomerReserveTripPositivecase {
 	}
 	@Test(dependsOnMethods= {"testSearchandLoc"})
 	public void testOnAPUNote() throws InterruptedException {
-		WebElement apuNotes = driver.findElement(By.xpath("//android.widget.Button[@bounds=\"[69,1410][1011,1548]\"]"));
+		WebElement apuNotes = driver.findElement(By.xpath("//android.widget.Button[@bounds='[69,1340][1011,1478]']"));
 		apuNotes.click();
 		Thread.sleep(3000);
 
